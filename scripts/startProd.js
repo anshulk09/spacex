@@ -7,6 +7,7 @@ const cluster = require('cluster');
 const { app } = require('../build/server');
 
 const PORT = process.env.PORT || 5000;
+app.set('port', process.env.PORT || 5000);
 
 // Use the native Node.js cluster module to create a worker processes for each CPU
 if (cluster.isMaster) {
