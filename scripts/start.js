@@ -57,5 +57,26 @@ choosePort(HOST, DEFAULT_PORT).then((port) => {
 
   const urls = prepareUrls('http', HOST, port);
 
-  server.listen();
+  server.listen(process.env.PORT, (err) => {
+    if (err) {
+      return console.log(err);
+    }
+
+    if (isInteractive) {
+      clearConsole();
+    }
+
+    console.log(chalk.white('\n\tStarting dev server...'));
+
+    openBrowser(urls.localUrlForBrowser);
+
+    purgeCacheOnChange(path.resolve(__dirname, '../'));
+
+    console.log(
+      chalk.blue(`
+        Running locally at ${urls.localUrlForBrowser}
+        Running on your network at ${urls.lanUrlForConfig}:${port}
+      `)
+    );
+  });
 });
