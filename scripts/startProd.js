@@ -22,7 +22,7 @@ if (cluster.isMaster) {
     console.log(`Worker ${worker.process.pid} died`);
   });
 } else {
-  app.listen(PORT, err => {
+  app.listen(PORT, '0.0.0.0', err => {
     if (err) {
       return console.error(err);
     }
