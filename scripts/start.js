@@ -9,11 +9,11 @@ require('@babel/register')({
       {
         camelCase: true,
         extensions: ['.css', '.scss'],
-        generateScopedName: '[hash:base64]'
-      }
+        generateScopedName: '[hash:base64]',
+      },
     ],
-    'dynamic-import-node'
-  ]
+    'dynamic-import-node',
+  ],
 });
 
 const chalk = require('chalk');
@@ -23,13 +23,13 @@ const openBrowser = require('react-dev-utils/openBrowser');
 const path = require('path');
 const {
   choosePort,
-  prepareUrls
+  prepareUrls,
 } = require('react-dev-utils/WebpackDevServerUtils');
 
 const { applyDevMiddleware } = require('./utils/devMiddleware');
 const { purgeCacheOnChange } = require('./utils/purgeCacheOnChange');
 
-process.on('unhandledRejection', err => {
+process.on('unhandledRejection', (err) => {
   throw err;
 });
 
@@ -50,14 +50,14 @@ server.use((req, res) => {
   app(req, res);
 });
 
-choosePort(HOST, DEFAULT_PORT).then(port => {
+choosePort(HOST, DEFAULT_PORT).then((port) => {
   if (!port) {
     return;
   }
 
   const urls = prepareUrls('http', HOST, port);
 
-  server.listen(process.env.PORT, '0.0.0.0', err => {
+  server.listen(process.env.PORT, (err) => {
     if (err) {
       return console.log(err);
     }
