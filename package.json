@@ -1,6 +1,7 @@
 {
-  "name": "react-ssr-boilerplate",
-  "version": "5.1.0",
+  "name": "react-ssr-spacex",
+  "version": "0.0.0",
+  "type": "module",
   "private": true,
   "engines": {
     "node": ">=10.15"
