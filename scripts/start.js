@@ -33,7 +33,7 @@ process.on('unhandledRejection', err => {
   throw err;
 });
 
-const DEFAULT_PORT = process.env.PORT || 5000;
+const DEFAULT_PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
 const isInteractive = process.stdout.isTTY;
 const server = express();
@@ -57,7 +57,7 @@ choosePort(HOST, DEFAULT_PORT).then(port => {
 
   const urls = prepareUrls('http', HOST, port);
 
-  server.listen(5000, '0.0.0.0', err => {
+  server.listen(process.env.PORT, '0.0.0.0', err => {
     if (err) {
       return console.log(err);
     }
