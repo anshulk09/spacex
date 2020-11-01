@@ -1,0 +1,141 @@
+.dashboard {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dashboardTitle {
+  font-size: 35px;
+  font-weight: 900;
+  text-align: left;
+  margin-left: 10px;
+}
+.dashboardContent {
+  display: flex;
+}
+.filterBox {
+  width: 190px;
+  min-width: 190px;
+}
+.filterView {
+  // border: 1px solid black;
+  margin-left: 5px;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+.filterYear {
+  margin: 10px 21px;
+  // background-color: #7bb902;
+  background-color: #c5e099;
+  border: 0;
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 3px;
+  width: 50px;
+  &.active {
+    background-color: #7cb902;
+  }
+  a {
+    color: #2b3642;
+    text-decoration: none;
+  }
+}
+.filterTitle {
+  font-size: 22px;
+  // font-family: none;
+  font-weight: 700;
+  margin: 0px 10px 0 10px;
+}
+.filter {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 5px;
+  .filter1 {
+    border-bottom: 1px solid;
+    padding: 0 20px;
+  }
+  .filter2 {
+    border-bottom: 1px solid;
+    padding: 0 10px;
+  }
+  .filter3 {
+    border-bottom: 1px solid;
+    padding: 0 10px;
+  }
+}
+
+.cardBox {
+  width: 84%;
+  margin: 10px 0px 0px 5px;
+}
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cardView {
+  // border: 1px solid black;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  width: 23%;
+  padding: 14px;
+  background-color: #ffffff;
+}
+.cardImg {
+  width: 100%;
+  height: auto;
+  background-color: #f2f2f2;
+}
+.cardContent {
+  margin: 0 28px;
+}
+.missionName {
+  color: #484d7d;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-weight: 900;
+}
+
+.headingContent {
+  font-size: 15px;
+}
+
+.missionId {
+  margin: 10px 0;
+}
+.launchYear {
+  margin: 10px 0;
+}
+.launchSuccess {
+  margin: 10px 0;
+}
+.landSuccess {
+  margin: 10px 0;
+}
+@media only screen and (max-width: 700px) {
+  .dashboardContent {
+    display: block;
+  }
+  .cardGrid {
+    display: block;
+  }
+  .cardView {
+    width: 158px;
+    margin-left: 0px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .cardView {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .filterBox {
+    width: 200px;
+  }
+  .cardView {
+    width: 20%;
+  }
+}
