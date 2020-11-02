@@ -11,7 +11,7 @@ const { renderServerSideApp } = require('./renderServerSideApp');
 const { PUBLIC_URL = '' } = process.env;
 
 // This export is used by our initialization code in /scripts
-export const app = express();
+const app = express();
 
 app.use(compression());
 app.use(helmet());
@@ -43,3 +43,5 @@ app.use(
 );
 
 app.use(renderServerSideApp);
+
+module.exports = app;

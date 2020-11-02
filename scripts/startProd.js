@@ -4,11 +4,11 @@ process.env.PUBLIC_URL = process.env.PUBLIC_URL || '';
 
 const cluster = require('cluster');
 
-const { app } = require('../server/app');
+const app = require('../server/app');
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, err => {
+app.listen(PORT, (err) => {
   if (err) {
     return console.error(err);
   }
