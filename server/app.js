@@ -1,12 +1,12 @@
-import path from 'path';
-import express from 'express';
-import compression from 'compression';
-import helmet from 'helmet';
-import morgan from 'morgan';
-import responseTime from 'response-time';
-import bodyParser from 'body-parser';
+const path = require('path');
+const express = require('express');
+const compression = require('compression');
+const helmet = require('helmet');
+const morgan = require('morgan');
+const responseTime = require('response-time');
+const bodyParser = require('body-parser');
 
-import { renderServerSideApp } from './renderServerSideApp';
+const { renderServerSideApp } = require('./renderServerSideApp');
 
 const { PUBLIC_URL = '' } = process.env;
 
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(
   PUBLIC_URL,
   express.static(path.resolve(__dirname, '../build'), {
-    maxage: Infinity
+    maxage: Infinity,
   })
 );
 
@@ -29,7 +29,7 @@ app.use(
 app.use(
   PUBLIC_URL,
   express.static(path.resolve(__dirname, '../public'), {
-    maxage: '30 days'
+    maxage: '30 days',
   })
 );
 
