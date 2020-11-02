@@ -21,8 +21,6 @@ export const applyDevMiddleware = (app) => {
         modules: false,
         hash: false,
       },
-      port: process.env.YOUR_PORT || process.env.PORT || 5000,
-      host: process.env.YOUR_HOST || '0.0.0.0',
     })
   );
 
