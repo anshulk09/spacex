@@ -44,4 +44,4 @@ app.use(
 
 app.use(renderServerSideApp);
 
-module.exports = app;
+module.exports = { app: app };

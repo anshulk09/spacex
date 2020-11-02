@@ -1,14 +1,14 @@
-import React from 'react';
-import ssrPrepass from 'react-ssr-prepass';
-import chalk from 'chalk';
+const React = require('react');
+const ssrPrepass = require('react-ssr-prepass');
+const chalk = require('chalk');
 
-export const fetchDataForRender = (ServerApp, req) => {
+const fetchDataForRender = (ServerApp, req) => {
   let data = {};
 
-  return ssrPrepass(<ServerApp data={data} location={req.url} />, element => {
+  return ssrPrepass(<ServerApp data={data} location={req.url} />, (element) => {
     if (element && element.type && element.type.fetchData) {
-      return element.type.fetchData(req).then(d => {
-        Object.keys(d).forEach(key => {
+      return element.type.fetchData(req).then((d) => {
+        Object.keys(d).forEach((key) => {
           if (data[key]) {
             logDuplicateKeyMessage(key, element.type.name);
           }
@@ -16,7 +16,7 @@ export const fetchDataForRender = (ServerApp, req) => {
 
         data = {
           ...data,
-          ...d
+          ...d,
         };
       });
     }
@@ -36,3 +36,5 @@ function logDuplicateKeyMessage(key, component) {
   console.log(chalk.red('This can cause unexpected behavior.'));
   console.log('');
 }
+
+module.exports = { fetchDataForRender: fetchDataForRender };
